@@ -1,0 +1,19 @@
+{
+    "name": "__Nombre__",
+    "version": "0.1.0",
+    "description": "Plugin made from the plugin factory skeleton: a note per product, shown under the product summary",
+    "namespace": "Plugins\\__Espacio__",
+    "essential": false,
+    "default": false,
+    "requires": {
+        "php": ">=7.4",
+        "aifec": ">=1.0.0",
+        "modules": ["catalog"]
+    },
+    "contract": {
+        "hosts": [],
+        "personal_data": [],
+        "tables": ["__id_bajo___notes"],
+        "capabilities": []
+    }
+}

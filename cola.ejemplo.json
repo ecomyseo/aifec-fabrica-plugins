@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "lista-deseos",
+    "nombre": "Lista de deseos",
+    "sector": "lista de deseos de los clientes con cuenta: guardan productos desde la ficha y los ven y los quitan desde Mi cuenta",
+    "idea": "un botón en la ficha y una página en la cuenta del cliente; nada de correos ni de llamadas a terceros, y al anonimizar o exportar a un cliente la lista se va o se entrega con él",
+    "datos": ["customer_id"],
+    "llamadas": "ninguna",
+    "capacidades": [],
+    "huecos": ["product.summary.after", "account.dashboard"],
+    "ajustes": {"lista_deseos.max_items": "máximo de productos por cliente (entero, 50 por defecto)"},
+    "no_hacer": ["tocar precios ni existencias", "enseñar la lista de un cliente a otro", "recorrer clientes o pedidos"]
+  },
+  {
+    "slug": "aviso-existencias",
+    "nombre": "Aviso de vuelta de existencias",
+    "sector": "el visitante pide que le avisen por correo cuando un producto agotado vuelva a tener existencias",
+    "idea": "un formulario «avísame» en la ficha del producto agotado (correo y casilla de consentimiento); cuando el producto vuelve a tener existencias se encola un solo aviso por petición y se marca como enviado",
+    "datos": ["email"],
+    "llamadas": "ninguna directa: el correo sale por el servicio de correo común",
+    "capacidades": [],
+    "huecos": ["product.buy.after"],
+    "ganchos": ["stock.changed"],
+    "ajustes": {"aviso_existencias.dias": "días que vale una petición (entero, 90 por defecto; nunca más)"},
+    "no_hacer": ["mandar correos con mail()", "avisar de peticiones de hace más del plazo", "recorrer todos los productos o todas las peticiones antiguas", "reenviar un aviso ya enviado"]
+  },
+  {
+    "slug": "punto-recogida",
+    "nombre": "Puntos de recogida",
+    "sector": "puntos de recogida de socios (consignas y tiendas amigas) con su dirección, su horario y su precio, para elegir en la caja",
+    "idea": "la tienda da de alta sus puntos en el panel; cada uno tiene un precio de recogida en céntimos que se suma al envío como línea visible, y el pedido se queda con el punto elegido",
+    "datos": [],
+    "llamadas": "ninguna",
+    "capacidades": [],
+    "huecos": ["checkout.before"],
+    "ajustes": {"punto_recogida.activo": "interruptor general (apagado por defecto)"},
+    "no_hacer": ["sustituir plantillas de la caja", "escribir el precio del envío por fuera de los cauces del sistema", "guardar la dirección del cliente"]
+  }
+]

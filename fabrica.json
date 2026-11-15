@@ -1,0 +1,8 @@
+{
+  "clase": "plugins",
+  "titulo": "Fábrica de plugins de AIFEC",
+  "carpeta_destino": "plugins",
+  "manifiesto": "plugin.json",
+  "orden_esqueleto": ["plugin:create", "{slug}", "--name={nombre}"],
+  "puertas": ["sintaxis", "contrato", "pruebas", "traducciones", "ciclo", "humo", "limpieza"]
+}

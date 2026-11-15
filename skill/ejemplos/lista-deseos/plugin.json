@@ -1,0 +1,19 @@
+{
+    "name": "Lista de deseos",
+    "version": "1.0.0",
+    "description": "Wish list for customers with an account: save products from the product page and see them in My account",
+    "namespace": "Plugins\\ListaDeseos",
+    "essential": false,
+    "default": false,
+    "requires": {
+        "php": ">=7.4",
+        "aifec": ">=1.0.0",
+        "modules": ["catalog", "customers"]
+    },
+    "contract": {
+        "hosts": [],
+        "personal_data": ["customer_id"],
+        "tables": ["lista_deseos_items"],
+        "capabilities": []
+    }
+}

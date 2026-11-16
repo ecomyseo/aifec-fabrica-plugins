@@ -104,7 +104,7 @@ El plugin está en `salida/<id>/` con su `LEEME.md` de una página (qué hace, c
 - `mail()`, `curl_*`, `file_get_contents('https://…')`, `exec`, `shell_exec`, `eval`, `extract`, `sleep`, `header()`, `exit` y `echo` en librerías.
 - `(array) $x` como «un array o vacío» (se escribe `is_array($x) ? $x : []`); `match`, `readonly`, tipos unión, `?->` y argumentos con nombre (no valen en PHP 7.4); `Tipo $x = null` (se escribe `?Tipo $x = null`).
 - Tocar el sistema (`core/`, `modules/`, otros plugins, temas) o el banco, o escribir fuera de `salida/<id>/`.
-- Datos de ejemplo con pinta de reales: correos (`ana@cliente.test`), teléfonos (`600000001`), claves (`clave-de-mentira`). Nunca un caso real.
+- Datos de ejemplo con pinta de reales: correos (`ana@cliente.test`), claves (`clave-de-mentira`). Los teléfonos de una prueba, solo del rango 999 (`999000001`), que el plan de numeración no tiene atribuido: un número «de relleno» con forma de móvil es el de alguien. Nunca un caso real.
 - Dar por bueno lo que no se ha comprobado.
 
 ## Referencias

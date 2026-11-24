@@ -59,9 +59,9 @@ def php_con_sqlite():
     """Un PHP que sirva para el banco real (con `pdo_sqlite`): `AIFEC_PHP`, el del PATH o los de una instalación de
     herramientas conocida. None si no se encuentra ninguno."""
     candidatos = [os.environ.get("AIFEC_PHP", ""), shutil.which("php") or ""]
-    for raiz in ("C:/dev-tools/php",):
-        carpeta = Path(raiz)
-        if carpeta.is_dir():
+    for raiz in (os.environ.get("AIFEC_PHP_DIR", ""),):
+        carpeta = Path(raiz) if raiz else None
+        if carpeta is not None and carpeta.is_dir():
             candidatos += [str(p / "php.exe") for p in sorted(carpeta.glob("php-8.*"), reverse=True)]
     for candidato in candidatos:
         if candidato and Path(candidato).exists() and _con_modulos(candidato):
@@ -78,7 +78,8 @@ def php_de(version: str):
     """El PHP de esa versión («7.4», «8.4») si se encuentra: `AIFEC_PHP<versión sin punto>`, `php<versión>` en el PATH o la
     carpeta de herramientas conocida. None si no hay."""
     candidatos = [os.environ.get("AIFEC_PHP" + version.replace(".", ""), ""), shutil.which("php" + version) or ""]
-    candidatos.append("C:/dev-tools/php/php-%s/php.exe" % version)
+    if os.environ.get("AIFEC_PHP_DIR"):
+        candidatos.append(os.path.join(os.environ["AIFEC_PHP_DIR"], "php-%s" % version, "php.exe"))
     for candidato in candidatos:
         if candidato and Path(candidato).exists():
             return candidato

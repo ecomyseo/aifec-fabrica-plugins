@@ -60,7 +60,7 @@ El filtro del corredor es «la ruta contiene». La puerta lanza `plugins/<id>/` 
 
 ## Una clave o un correo «de mentira» tiene que parecerlo
 
-`'api_key' => 'a1b2c3d4e5f60718293a4b5c6d7e8f90'` es una clave con pinta de real para la puerta de limpieza. Los ejemplos: `clave-de-mentira`, `ana@cliente.test`, `x@example.com`. Un correo de verdad solo vale en las líneas `@author` y `@copyright` de una cabecera.
+una línea `'api_key' => '<32 caracteres seguidos de letras y cifras>'` es una clave con pinta de real para la puerta de limpieza. Los ejemplos: `clave-de-mentira`, `ana@cliente.test`, `x@example.com`. Un correo de verdad solo vale en las líneas `@author` y `@copyright` de una cabecera.
 
 ## Nada en la raíz que no sea una pieza por convenio
 

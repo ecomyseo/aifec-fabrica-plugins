@@ -95,10 +95,10 @@ class PruebasDeLimpieza(BasePlugins):
         (plugin / "LEEME.md").write_bytes((plugin / "LEEME.md").read_bytes() + b"\nEscribe a ana@cliente.test, a x@example.com o a juan@tienda.invalid.\n")
         codigo, informe, salida = self.lanzar("limpieza", plugin)
         self.aceptar(codigo, informe, salida, 0)
-        (plugin / "LEEME.md").write_bytes((plugin / "LEEME.md").read_bytes() + b"Soporte: soporte@empresa-de-verdad.com\n")
+        (plugin / "LEEME.md").write_bytes((plugin / "LEEME.md").read_bytes() + b"Soporte: soporte@" + b"empresa-de-verdad.com\n")
         codigo, informe, salida = self.lanzar("limpieza", plugin)
         self.aceptar(codigo, informe, salida, 1)
-        self.assertIn("soporte@empresa-de-verdad.com", informe["resumen"])
+        self.assertIn("soporte@" + "empresa-de-verdad.com", informe["resumen"])
         self.assertIn("LEEME.md", informe["resumen"])
 
     def test_el_correo_de_la_linea_author_de_una_cabecera_no_cuenta(self):
